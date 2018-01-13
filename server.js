@@ -24,13 +24,11 @@ app.get("/", function (request, response) {
 app.get("/:userInput", function (request, response) {
   
   var userInput = request.params.userInput;
-  var unixFormat;
   var date = new Date(userInput);
+  var unixFormat;
   var naturalFormat;
   var month = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"];
-
-  
   
   //something's wrong with this first condition
   if(userInput === parseInt(userInput).toString()){
