@@ -1,12 +1,15 @@
 // server.js
 // where your node app starts
 
+//Example usage:
+//https://timestamp-ms.herokuapp.com/December%2015,%202015
+//https://timestamp-ms.herokuapp.com/1450137600
+//Example output:
+//{ "unix": 1450137600, "natural": "December 15, 2015" }
+
 // init project
 var express = require('express');
 var app = express();
-
-// we've started you off with Express, 
-// but feel free to use whatever libs or frameworks you'd like through `package.json`.
 
 // http://expressjs.com/en/starter/static-files.html
 app.use(express.static('public'));
