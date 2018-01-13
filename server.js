@@ -27,11 +27,10 @@ app.get("/:userInput", function (request, response) {
   var date = new Date(userInput);
   var unixFormat;
   var naturalFormat;
-  console.log(userInput);
+
+  var test = typeof userInput;
   
   
-  
-  /*
   if(typeof userInput == 'number'){
       //convert to natural date format
     unixFormat = userInput;
@@ -39,17 +38,20 @@ app.get("/:userInput", function (request, response) {
     
     response.json({
       "unix": unixFormat, 
-      "natural": naturalFormat
+      "natural": naturalFormat,
+      "test":test
   });
     
   }else{
       response.json({
       "unix": null, 
-      "natural": null
+      "natural": null,
+              "test":test
+
   });
     
   }
- */
+ 
   /* if userInput is in UNIX date format <--- it will be all numbers, no letters, and not a string
         convert to natural date format
         return json data
