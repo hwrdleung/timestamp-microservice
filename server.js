@@ -24,6 +24,9 @@ app.get("/", function (request, response) {
 app.get("/:userInput", function (request, response) {
   
   var userInput = request.params.userInput;
+  var date = new Date(userInput);
+  
+  
   
   /* if userInput is in UNIX date format
         convert to natural date format
