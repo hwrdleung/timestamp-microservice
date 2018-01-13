@@ -30,10 +30,10 @@ app.get("/:userInput", function (request, response) {
   var month = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"];
 
-  var test = typeof userInput;
+  
   
   //something's wrong with this first condition
-  if(IT IS A NUMBER){
+  if(userInput === parseInt(userInput).toString()){
       //convert to natural date format
     unixFormat = userInput;
     date = new Date(parseInt(userInput)*1000);
@@ -41,23 +41,23 @@ app.get("/:userInput", function (request, response) {
     
     response.json({
       "unix": unixFormat, 
-      "natural": naturalFormat,
+      "natural": naturalFormat
     });
     
-  }else if(date.toString() !== 'invalid date'){
+  }else if(date.toString() !== 'Invalid Date'){
     
     naturalFormat = month[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear();
     unixFormat = date.getTime()/1000;
     
     response.json({
       "unix": unixFormat, 
-      "natural": naturalFormat,
+      "natural": naturalFormat
     });    
     
-  }else if(date.toString() === 'invalid date'){
+  }else if(date.toString() === 'Invalid Date'){
       response.json({
       "unix": null, 
-      "natural": null,
+      "natural": null
   });
     
   }
