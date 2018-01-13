@@ -17,22 +17,31 @@ app.use(express.static('public'));
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/", function (request, response) {
   response.sendFile(__dirname + '/views/index.html');
-  console.log("index.html");
 });
-/*
-app.get("/:lol", function (request, response) {
+
+
+
+app.get("/:userInput", function (request, response) {
   
-  var amIaNum = Number(request.params.lol);
+  var userInput = request.params.userInput;
   
-  response.json({
-      "unix": lol, 
-      "natural": lol
+  /* if userInput is in UNIX date format
+        convert to natural date format
+        return json data
+        
+    if userInput is in natural date format
+        convert to UNIX format
+        return json data 
+        
+    else 
+    response.json({
+      "unix": null, 
+      "natural": null
   });
+  
+  */
+  
 });
-
-
-*/
-
 
 // listen for requests :)
 var listener = app.listen(process.env.PORT, function () {
