@@ -27,8 +27,12 @@ app.get("/:userInput", function (request, response) {
   var date = new Date(userInput);
   var unixFormat;
   var naturalFormat;
+  console.log(userInput);
   
-  if(parseInt(userInput) === userInput){
+  
+  
+  /*
+  if(typeof userInput == 'number'){
       //convert to natural date format
     unixFormat = userInput;
     naturalFormat = date.getMonth() + " " + date.getDay() + " " + date.getFullYear();
@@ -45,7 +49,7 @@ app.get("/:userInput", function (request, response) {
   });
     
   }
-  
+ */
   /* if userInput is in UNIX date format <--- it will be all numbers, no letters, and not a string
         convert to natural date format
         return json data
