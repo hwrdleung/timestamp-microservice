@@ -32,8 +32,8 @@ app.get("/:userInput", function (request, response) {
 
   var test = typeof userInput;
   
-  
-  if(userInput === parseInt(userInput).toString()){
+  //something's wrong with this first condition
+  if(IT IS A NUMBER){
       //convert to natural date format
     unixFormat = userInput;
     date = new Date(parseInt(userInput)*1000);
@@ -61,22 +61,7 @@ app.get("/:userInput", function (request, response) {
   });
     
   }
- 
-  /* if userInput is in UNIX date format <--- it will be all numbers, no letters, and not a string
-        convert to natural date format
-        return json data
-        
-    if userInput is in natural date format
-        convert to UNIX format
-        return json data 
-        
-    else 
-    response.json({
-      "unix": null, 
-      "natural": null
-  });
-  
-  */
+
   
 });
 
