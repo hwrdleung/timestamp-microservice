@@ -46,7 +46,8 @@ app.get("/:userInput", function (request, response) {
     
   }else if(date !== 'invalid date'){
     
-    
+    naturalFormat = month[date.getMonth()] + " " + date.getDay() + ", " + date.getFullYear();
+    unixFormat = date.getTime()/1000;
     
     response.json({
       "unix": unixFormat, 
