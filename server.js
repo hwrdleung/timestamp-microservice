@@ -24,8 +24,8 @@ app.get("/", function (request, response) {
 app.get("/:userInput", function (request, response) {
   
   var userInput = request.params.userInput;
-  var date = new Date(userInput);
   var unixFormat;
+  var date = new Date(userInput);
   var naturalFormat;
   var month = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"];
@@ -37,7 +37,7 @@ app.get("/:userInput", function (request, response) {
       //convert to natural date format
     unixFormat = userInput;
     date = new Date(parseInt(userInput));
-    naturalFormat = month[date.getMonth()] + " " + date.getDay() + ", " + date.getFullYear();
+    naturalFormat = month[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear();
     
     response.json({
       "unix": unixFormat, 
@@ -46,7 +46,7 @@ app.get("/:userInput", function (request, response) {
     
   }else if(date !== 'invalid date'){
     
-    naturalFormat = month[date.getMonth()] + " " + date.getDay() + ", " + date.getFullYear();
+    naturalFormat = month[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear();
     unixFormat = date.getTime()/1000;
     
     response.json({
