@@ -27,27 +27,36 @@ app.get("/:userInput", function (request, response) {
   var date = new Date(userInput);
   var unixFormat;
   var naturalFormat;
+  var month = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"];
 
   var test = typeof userInput;
   
   
-  if(typeof userInput == 'number'){
+  if(userInput === parseInt(userInput).toString()){
       //convert to natural date format
     unixFormat = userInput;
-    naturalFormat = date.getMonth() + " " + date.getDay() + " " + date.getFullYear();
+    date = new Date(parseInt(userInput));
+    naturalFormat = month[date.getMonth()] + " " + date.getDay() + ", " + date.getFullYear();
     
     response.json({
       "unix": unixFormat, 
       "natural": naturalFormat,
-      "test":test
-  });
+    });
+    
+  }else if(date !== 'invalid date'){
+    
+    
+    
+    response.json({
+      "unix": unixFormat, 
+      "natural": naturalFormat,
+    });    
     
   }else{
       response.json({
       "unix": null, 
       "natural": null,
-              "test":test
-
   });
     
   }
