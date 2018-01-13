@@ -1,13 +1,13 @@
 body {
   margin: 0;
-  padding: 0;
+  padding-bottom: 50px;
   font-family: Arial, sans-serif;
   background-color:#262626;
   color: #FFF;
 }
 
 header {
- padding: 10px auto;
+ padding: 10px;
   border-bottom: 1px #fff solid;
 }
 
@@ -24,5 +24,10 @@ h1, h2, h3 {
   background: rgba(255, 255, 255, 0.5);
   color: #262626;
   padding: 10px 20px;
+}
+
+.main li{
+ line-height: 25px; 
+  font-size: 17px;
 }
 
