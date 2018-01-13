@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="/style.css">
   </head>
   <body>
-    
+    <header>
     <h1>
       Timestamp microservice
     </h1>
@@ -28,11 +28,13 @@
       freecodecamp backend API project
     </h3>
     
-    <div class="main">
+      
+    </header>
       
     <h2>
       User Stories:
     </h2>
+       <div class="main">
     <ul>
       <li>I can pass a string as a parameter, and it will check to see whether that string contains either a unix timestamp or a natural 
         language date (example: January 1, 2016)</li>
@@ -41,6 +43,28 @@
     </ul>
       
     </div>
+    
+    <h2>
+      Example Input:
+    </h2>
+    
+      <div class="main">
+      <ul>
+        <li>https://timestamp-ms.herokuapp.com/December%2015,%202015</li>
+        <li>https://timestamp-ms.herokuapp.com/1450137600</li>
+      </ul>
+    </div>
+    
+    
+    <h2>
+      Example Output:
+    </h2>
+    <div class="main">
+      <ul>
+        <li>{ "unix": 1450137600, "natural": "December 15, 2015" }</li>
+      </ul>
+    </div>
+    
 
     <!-- Your web-app is https, so your scripts need to be too -->
     <script src="https://code.jquery.com/jquery-2.2.1.min.js"

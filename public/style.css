@@ -2,12 +2,27 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
+  background-color:#262626;
+  color: #FFF;
+}
+
+header {
+ padding: 10px auto;
+  border-bottom: 1px #fff solid;
 }
 
 h1, h2, h3 {
-   text-align: center; 
+  text-align: center; 
+  color: #FFF;
 }
 
 .main{
- height: a 
+ height: auto;
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.5);
+  color: #262626;
+  padding: 10px 20px;
 }
+
