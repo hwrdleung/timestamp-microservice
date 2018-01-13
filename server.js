@@ -36,7 +36,7 @@ app.get("/:userInput", function (request, response) {
   if(userInput === parseInt(userInput).toString()){
       //convert to natural date format
     unixFormat = userInput;
-    date = new Date(parseInt(userInput));
+    date = new Date(parseInt(userInput)*1000);
     naturalFormat = month[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear();
     
     response.json({
@@ -44,7 +44,7 @@ app.get("/:userInput", function (request, response) {
       "natural": naturalFormat,
     });
     
-  }else if(date !== 'invalid date'){
+  }else if(date.toString() !== 'invalid date'){
     
     naturalFormat = month[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear();
     unixFormat = date.getTime()/1000;
@@ -54,7 +54,7 @@ app.get("/:userInput", function (request, response) {
       "natural": naturalFormat,
     });    
     
-  }else{
+  }else if(date.toString() === 'invalid date'){
       response.json({
       "unix": null, 
       "natural": null,
